@@ -1,0 +1,12 @@
+package com.zz;
+
+/**
+ *函数式接口
+ * 1.什么是函数式接口？
+ * 		只包含一个抽象方法的接口，称为函数式接口。
+ * 2.
+ *
+ */
+public class FunctionalProgramming {
+
+}
