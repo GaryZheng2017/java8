@@ -7,6 +7,7 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="LambdaFunctionalPro"/>
 			<item value="Lambda"/>
 			<item value="maven_test"/>
 		</list>
@@ -32,6 +33,20 @@
 		<list key="issueManagementSystem">
 		</list>
 		<list key="issueManagementUrl">
+		</list>
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="D:\learning\gitRepository\java8\Lambda"/>
+			<item value="D:\learning\workspace\Lambda"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
 		</list>
 	</section>
 	<section name="MavenProjectWizardArchetypePage">

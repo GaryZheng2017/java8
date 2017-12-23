@@ -1,0 +1,81 @@
+package com.zz;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Supplier;
+
+import org.junit.Test;
+
+/**
+ *函数式接口
+ * 1.什么是函数式接口？
+ * 		只包含一个抽象方法的接口，称为函数式接口。
+ * 	我们可以在任意函数式接口上使用 @FunctionalInterface 注解，这样做可以检查它是否是一个函数式接口，
+ *  同时 javadoc 也会包含一条声明，说明这个接口是一个函数式接口。
+ *  
+ * 2.四大函数式接口
+ * 	Consumer<T> : 消费型接口
+ *  	void accept(T t);
+ *    
+ *  Supplier<T> :供给型接口
+ *  	T get();
+ *  
+ *  Function<T,R>:函数式接口
+ *  	R apply(T t);
+ *  
+ *  Predicate<T> :断言型接口
+ *  	boolean test(T t);
+ *  	
+ *    
+ *
+ */
+public class FunctionalProgramming {
+
+	@Test
+	public void test1(){
+		eat(1000,x -> System.out.println("今天一共吃了"+x+"元"));
+	}
+	
+	public void eat(double money,Consumer<Double> con){
+		con.accept(money);
+	}
+	
+	@Test 
+	public void test2(){
+		List<Integer> list = getNumList(10, () -> (int)(Math.random()*100));
+		for (Integer i : list) {
+			System.out.println(i);
+		}
+	}
+	
+	//产生指定个数的整数放到集合中
+	public List<Integer> getNumList(int num,Supplier<Integer> sup){
+		List<Integer> list = new ArrayList<Integer>();
+		for (int i = 0; i < num; i++) {
+			list.add(sup.get());
+		}
+		return list;
+	}
+	
+	@Test
+	public void test3(){
+		String str = strToUpper("abcdefghijk", (x) -> x.toUpperCase());
+		System.out.println(str);
+	}
+	
+	//将输入的字符串输出大写
+	public String strToUpper(String str,Function<String,String> fun){
+		return fun.apply(str);
+	}
+	
+	@Test
+	public void test4(){
+		
+	}
+	
+	public List<String> filterStr(List list,Predicate<String> pre){
+		
+	}
+}
