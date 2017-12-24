@@ -1,0 +1,7 @@
+package com.zz;
+
+public class LambdaMethodRef {
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,10 @@
+package com.zz;
+
+import org.junit.Test;
+
+public class LambdaMethodRef {
+	@Test
+	public void test1(){
+		
+	}
+}

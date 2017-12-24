@@ -1,0 +1,10 @@
+package com.zz;
+
+/**
+ *构造器引用
+ * 格式
+ * 	类::new
+ */
+public class LambdaConstrutorRef {
+
+}

@@ -1,0 +1,63 @@
+package com.zz;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.BiFunction;
+import java.util.function.Function;
+import java.util.function.Supplier;
+
+import org.junit.Test;
+
+/**
+ *构造器引用
+ * 格式
+ * 	类::new
+ * 
+ * 注意：需要调用的构造器的参数列表与涵数式接口中抽象方法的参数列表保持一致。
+ */
+public class LambdaConstrutorRef {
+	
+	@Test
+	public void test1(){
+		//无参构造器
+		Supplier<Person> sup = () -> new Person();
+		
+		Supplier<Person> sup2 = Person::new;
+		Person p = sup2.get();
+		System.out.println(p);		
+		
+		//有参数，一个
+		Function<String,Person> fun1 = (x) -> new Person(x);
+		Function<String,Person> fun2 = Person::new;
+		
+		//有参数，两个
+		BiFunction<String,Integer,Person> fun3 = (x,y) -> new Person(x,y);
+		BiFunction<String,Integer,Person> fun4 = Person::new;
+		Person p4 = fun4.apply("name", 30);
+		System.out.println(p4);
+	}
+	
+	/**
+	 * 数组引用
+	 * 格式： type[] :: new
+	 */
+	@Test
+	public void test2(){
+		Function<Integer,String[]> fun = (x) -> new String [x];
+		Function<Integer,String[]> fun2 = String[]::new;
+		String [] str = fun2.apply(10);
+		System.out.println(str.length);
+	}
+	
+	@Test
+	public void test3(){
+		Function<Integer,List<String>> fun = (x) -> new ArrayList<>(x);
+		Function<Integer,List<String>> fun1 = ArrayList::new;
+		List<String> a = fun1.apply(10);
+		System.out.println(a.size());
+		
+	}
+
+	
+	
+}
